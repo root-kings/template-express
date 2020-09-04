@@ -1,0 +1,38 @@
+### Create user
+
+POST http://localhost:3000/api/users HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "Test User",
+  "type": "test",
+  "email": "test@rootkings.dev",
+  "password": "test"
+}
+
+### Login
+
+POST http://localhost:3000/api/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "test@rootkings.dev",
+  "password": "test",
+  "type": "test"
+}
+
+### List users
+
+GET http://localhost:3000/api/users HTTP/1.1
+Authorization: Bearer <token>
+
+### List users by type
+
+GET http://localhost:3000/api/users?type=test HTTP/1.1
+Authorization: Bearer <token>
+
+### User details
+
+GET http://localhost:3000/api/users/<userid> HTTP/1.1
+Authorization: Bearer <token>
+
